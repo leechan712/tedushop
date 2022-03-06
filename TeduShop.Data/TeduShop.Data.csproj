@@ -57,9 +57,25 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\202203060842586_InitialDB.cs" />
-    <Compile Include="Migrations\202203060842586_InitialDB.designer.cs">
-      <DependentUpon>202203060842586_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\202203060949053_InitialDBMenu.cs" />
+    <Compile Include="Migrations\202203060949053_InitialDBMenu.designer.cs">
+      <DependentUpon>202203060949053_InitialDBMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061017332_InitialFooter.cs" />
+    <Compile Include="Migrations\202203061017332_InitialFooter.designer.cs">
+      <DependentUpon>202203061017332_InitialFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061018579_InitialFooter1.cs" />
+    <Compile Include="Migrations\202203061018579_InitialFooter1.designer.cs">
+      <DependentUpon>202203061018579_InitialFooter1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061022150_InitialPage.cs" />
+    <Compile Include="Migrations\202203061022150_InitialPage.designer.cs">
+      <DependentUpon>202203061022150_InitialPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203061025103_InitialPost.cs" />
+    <Compile Include="Migrations\202203061025103_InitialPost.designer.cs">
+      <DependentUpon>202203061025103_InitialPost.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,8 +99,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203060842586_InitialDB.resx">
-      <DependentUpon>202203060842586_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203060949053_InitialDBMenu.resx">
+      <DependentUpon>202203060949053_InitialDBMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061017332_InitialFooter.resx">
+      <DependentUpon>202203061017332_InitialFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061018579_InitialFooter1.resx">
+      <DependentUpon>202203061018579_InitialFooter1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061022150_InitialPage.resx">
+      <DependentUpon>202203061022150_InitialPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203061025103_InitialPost.resx">
+      <DependentUpon>202203061025103_InitialPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
