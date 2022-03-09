@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -7,6 +8,7 @@ using System.Web.Http;
 using TeduShop.Model.Models;
 using TeduShop.Service;
 using TeduShop.Web.Infrastructure.Core;
+using TeduShop.Web.Infrastructure.Extensions;
 using TeduShop.Web.Models;
 
 namespace TeduShop.Web.Api
@@ -29,9 +31,9 @@ namespace TeduShop.Web.Api
             {
                 var listCategory = _postCategoryService.GetAll();
 
-                //var listPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
+                var listPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
 
-                //HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listPostCategoryVm);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listPostCategoryVm);
 
                 return response;
             });
@@ -46,10 +48,11 @@ namespace TeduShop.Web.Api
                 if (!ModelState.IsValid)
                 {
                     request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                } else
+                }
+                else
                 {
                     PostCategory newPostCategory = new PostCategory();
-                    //newPostCategory.UpdatePostCategory(postCategoryVm);
+                    newPostCategory.UpdatePostCategory(postCategoryVm);
 
                     var category = _postCategoryService.Add(newPostCategory);
                     _postCategoryService.Save();
@@ -72,10 +75,10 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    //var postCategoryDb = _postCategoryService.GetById(postCategoryVm.ID);
-                    //postCategoryDb.UpdatePostCategory(postCategoryVm);
-                    //_postCategoryService.Update(postCategoryDb);
-                    //_postCategoryService.Save();
+                    var postCategoryDb = _postCategoryService.GetById(postCategoryVm.ID);
+                    postCategoryDb.UpdatePostCategory(postCategoryVm);
+                    _postCategoryService.Update(postCategoryDb);
+                    _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK);
                 }
