@@ -5,7 +5,25 @@
     {
       "provider": "cdnjs",
       "library": "angular.js@1.8.2",
-      "destination": "Scripts/plugins/angular"
+      "destination": "Assets/admin/libs/angular.js/"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "angular-ui-router@1.0.30",
+      "destination": "Assets/admin/libs/angular-ui-router"
+    },
+    {
+      "provider": "cdnjs",
+      "library": "jquery@3.6.0",
+      "destination": "Assets/admin/libs/jquery"
+    },
+    {
+      "library": "bootstrap@4.6.1",
+      "destination": "Assets/admin/libs/bootstrap"
+    },
+    {
+      "library": "font-awesome@6.0.0",
+      "destination": "Assets/admin/libs/font-awesome/"
     }
   ]
 }
