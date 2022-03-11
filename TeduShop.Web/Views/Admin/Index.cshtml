@@ -197,26 +197,6 @@
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="../../index.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../index2.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="../widgets.html" class="nav-link">
@@ -291,33 +271,21 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    Charts
+                                    Sản phẩm
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="../charts/chartjs.html" class="nav-link">
+                                    <a ui-sref="product_categories" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>ChartJS</p>
+                                        <p>Danh mục sản phẩm</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../charts/flot.html" class="nav-link">
+                                    <a ui-sref="products" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Flot</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../charts/inline.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Inline</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../charts/uplot.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>uPlot</p>
+                                        <p>Sản phẩm</p>
                                     </a>
                                 </li>
                             </ul>
@@ -857,10 +825,13 @@
     <script src="/Assets/admin/libs/angular.js/angular.js"></script>
     <script src="/Assets/admin/libs/angular-ui-router/angular-ui-router.js"></script>
     <script src="/app/shared/modules/tedushop.common.js"></script>
+    <script src="/app/shared/services/apiService.js"></script>
     <script src="/app/components/products/products.module.js"></script>
+    <script src="~/app/components/product_categories/productCategories.module.js"></script>
     <script src="/app/app.js"></script>
     <script src="/app/components/products/productAddController.js"></script>
     <script src="/app/components/products/productListController.js"></script>
+    <script src="/app/components/product_categories/productCategoryListController.js"></script>
     <script src="/app/components/home/homeController.js"></script>
 </body>
 </html>
