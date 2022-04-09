@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/Assets/admin/libs/font-awesome/css/all.min.css">
+    <!-- Toastr -->
+    <link href="/Assets/admin/libs/toastr/toastr.min.css" rel="stylesheet" />
     <!-- Theme style -->
     <link rel="stylesheet" href="/Assets/admin/css/adminlte.min.css">
 </head>
@@ -824,10 +826,12 @@
     <!-- Begin embed angularJS -->
     <script src="/Assets/admin/libs/angular.js/angular.js"></script>
     <script src="/Assets/admin/libs/angular-ui-router/angular-ui-router.js"></script>
+    <script src="~/Assets/admin/libs/toastr/toastr.min.js"></script>
     <script src="/app/shared/modules/tedushop.common.js"></script>
     <script src="/app/shared/filters/statusFilter.js"></script>
     <script src="/app/shared/services/apiService.js"></script>
-    <script src="/app/shared/directives/pagerDirective.js"></script> <!-- Thêm vào đây -->
+    <script src="/app/shared/directives/pagerDirective.js"></script>
+    <script src="/app/shared/services/notificationService.js"></script> <!-- Thêm vào đây -->
     <script src="/app/components/products/products.module.js"></script>
     <script src="~/app/components/product_categories/productCategories.module.js"></script>
     <script src="/app/app.js"></script>

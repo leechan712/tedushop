@@ -25,7 +25,7 @@ namespace TeduShop.Web.Api
         }
         #endregion
 
-    [Route("getallparents")]
+    [Route("getall")]
     [HttpGet]
     public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
     {

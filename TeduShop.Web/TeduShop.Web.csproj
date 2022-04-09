@@ -215,6 +215,7 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\admin\css\adminlte.css" />
     <Content Include="Assets\admin\css\adminlte.min.css" />
     <Content Include="Assets\admin\css\alt\adminlte.components.css" />
@@ -329,6 +330,9 @@
     <Content Include="Assets\admin\libs\jquery\jquery.min.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.slim.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.slim.min.js" />
+    <Content Include="Assets\admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -500,6 +504,7 @@
     <Content Include="Assets\admin\libs\font-awesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Assets\admin\libs\font-awesome\webfonts\fa-v4compatibility.ttf" />
     <Content Include="Assets\admin\libs\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="Assets\admin\libs\toastr\toastr.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
