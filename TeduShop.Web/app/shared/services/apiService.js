@@ -1,4 +1,4 @@
-﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
+﻿/// <reference path="../../../assets/admin/libs/angular.js/angular.js" />
 
 (function (app) {
     app.factory('apiService', apiService);
