@@ -3,17 +3,14 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
-      "provider": "cdnjs",
       "library": "angular.js@1.8.2",
       "destination": "Assets/admin/libs/angular.js/"
     },
     {
-      "provider": "cdnjs",
       "library": "angular-ui-router@1.0.30",
       "destination": "Assets/admin/libs/angular-ui-router"
     },
     {
-      "provider": "cdnjs",
       "library": "jquery@3.6.0",
       "destination": "Assets/admin/libs/jquery"
     },
@@ -28,6 +25,15 @@
     {
       "library": "toastr.js@2.1.4",
       "destination": "Assets/admin/libs/toastr"
+    },
+    {
+      "library": "bootbox.js@5.5.2",
+      "destination": "Assets/admin/libs/bootbox"
+    },
+    {
+      "provider": "unpkg",
+      "library": "ngbootbox@0.2.0",
+      "destination": "Assets/admin/libs/ngbootbox"
     }
   ]
 }
