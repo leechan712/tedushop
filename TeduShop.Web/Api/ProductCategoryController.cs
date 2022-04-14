@@ -60,6 +60,7 @@ namespace TeduShop.Web.Api
         }
 
         [Route("getall")]
+        [AllowAnonymous]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
         {

@@ -34,6 +34,14 @@
       "provider": "unpkg",
       "library": "ngbootbox@0.2.0",
       "destination": "Assets/admin/libs/ngbootbox"
+    },
+    {
+      "library": "ckeditor@4.18.0",
+      "destination": "Assets/admin/libs/ckeditor/"
+    },
+    {
+      "library": "angular-ckeditor@1.0.3",
+      "destination": "Assets/admin/libs/angular-ckeditor/"
     }
   ]
 }
