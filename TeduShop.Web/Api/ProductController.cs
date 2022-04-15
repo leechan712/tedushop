@@ -33,6 +33,7 @@ namespace TeduShop.Web.Api
         #endregion
 
         [Route("getallparents")]
+        [AllowAnonymous]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request)
         {
@@ -48,6 +49,7 @@ namespace TeduShop.Web.Api
             return CreateHttpResponse(request, func);
         }
         [Route("getbyid/{id:int}")]
+        [AllowAnonymous]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
         {
@@ -92,6 +94,7 @@ namespace TeduShop.Web.Api
 
 
         [Route("create")]
+        [AllowAnonymous]
         [HttpPost]
         public HttpResponseMessage Create(HttpRequestMessage request, ProductViewModel productCategoryVm)
         {
@@ -120,6 +123,7 @@ namespace TeduShop.Web.Api
         }
 
         [Route("update")]
+        [AllowAnonymous]
         [HttpPut]
         public HttpResponseMessage Update(HttpRequestMessage request, ProductViewModel productVm)
         {
@@ -149,6 +153,7 @@ namespace TeduShop.Web.Api
         }
 
         [Route("delete")]
+        [AllowAnonymous]
         [HttpDelete]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
@@ -172,6 +177,7 @@ namespace TeduShop.Web.Api
             });
         }
         [Route("deletemulti")]
+        [AllowAnonymous]
         [HttpDelete]
         public HttpResponseMessage DeleteMulti(HttpRequestMessage request, string checkedProducts)
         {

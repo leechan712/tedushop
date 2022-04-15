@@ -6132,6 +6132,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Libs\CKFinder.dll" />
+    <Content Include="UploadedFiles\images\20220410013609.png" />
+    <Content Include="UploadedFiles\_thumbs\Images\20220410013609.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -6149,7 +6151,6 @@
     <Folder Include="app\shared\navigation\" />
     <Folder Include="app\shared\views\" />
     <Folder Include="Assets\client\" />
-    <Folder Include="UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
