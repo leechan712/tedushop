@@ -25,7 +25,6 @@
         }
 
         function AddProduct() {
-
             $scope.product.MoreImages = JSON.stringify($scope.moreImages)
             apiService.post('api/product/create', $scope.product,
                 function (result) {
@@ -47,7 +46,22 @@
         $scope.ChooseImage = function () {
             var finder = new CKFinder();
             finder.selectActionFunction = function (fileUrl) {
-                $scope.product.Image = fileUrl;
+                $scope.$apply(function () {
+                    $scope.product.Image = fileUrl;
+                })
+            }
+            finder.popup();
+        }
+
+        $scope.moreImages = [];
+
+        $scope.ChooseMoreImage = function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $scope.$apply(function () {
+                    $scope.moreImages.push(fileUrl);
+                })
+
             }
             finder.popup();
         }
