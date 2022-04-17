@@ -42,6 +42,10 @@
     {
       "library": "angular-ckeditor@1.0.3",
       "destination": "Assets/admin/libs/angular-ckeditor/"
+    },
+    {
+      "library": "icheck-bootstrap@3.0.1",
+      "destination": "Assets/admin/libs/icheck-bootstrap/"
     }
   ]
 }

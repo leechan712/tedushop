@@ -14,7 +14,7 @@
         }
 
         $scope.UpdateProduct = UpdateProduct;
-        $scope.moreImages = [];
+
         $scope.GetSeoTitle = GetSeoTitle;
 
         function GetSeoTitle() {
@@ -25,7 +25,9 @@
             apiService.get('api/product/getbyid/' + $stateParams.id, null, function (result) {
                 console.log(result.data);
                 $scope.product = result.data;
-                $scope.moreImages = JSON.parse($scope.product.MoreImages);
+                if ($scope.product.MoreImages != "null" && $scope.product.MoreImages != "") {
+                    $scope.moreImages = JSON.parse($scope.product.MoreImages);
+                }       
             }, function (error) {
                 notificationService.displayError(error.data);
             });
@@ -59,6 +61,8 @@
             }
             finder.popup();
         }
+
+        $scope.moreImages = [];
 
         $scope.ChooseMoreImage = function () {
             var finder = new CKFinder();

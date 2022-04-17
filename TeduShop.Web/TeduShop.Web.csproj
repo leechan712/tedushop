@@ -208,6 +208,9 @@
     <Content Include="app\app.js" />
     <Content Include="app\components\home\homeController.js" />
     <Content Include="app\components\home\homeView.html" />
+    <Content Include="app\components\home\rootController.js" />
+    <Content Include="app\components\login\loginController.js" />
+    <Content Include="app\components\login\loginView.html" />
     <Content Include="app\components\products\productAddController.js" />
     <Content Include="app\components\products\productAddView.html" />
     <Content Include="app\components\products\productEditController.js" />
@@ -228,6 +231,7 @@
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="app\shared\services\commonService.js" />
     <Content Include="app\shared\services\notificationService.js" />
+    <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\adminlte.css" />
     <Content Include="Assets\admin\css\adminlte.min.css" />
     <Content Include="Assets\admin\css\alt\adminlte.components.css" />
@@ -6098,6 +6102,8 @@
     <Content Include="Assets\admin\libs\font-awesome\sprites\brands.svg" />
     <Content Include="Assets\admin\libs\font-awesome\sprites\regular.svg" />
     <Content Include="Assets\admin\libs\font-awesome\sprites\solid.svg" />
+    <Content Include="Assets\admin\libs\icheck-bootstrap\icheck-bootstrap.css" />
+    <Content Include="Assets\admin\libs\icheck-bootstrap\icheck-bootstrap.min.css" />
     <Content Include="Assets\admin\libs\jquery\jquery.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.min.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.slim.js" />
@@ -6149,7 +6155,6 @@
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\views\" />
     <Folder Include="Assets\client\" />
   </ItemGroup>
   <ItemGroup>
