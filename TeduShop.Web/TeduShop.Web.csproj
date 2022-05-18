@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
+    <Compile Include="Api\HomeController.cs" />
     <Compile Include="Api\PostCategoryController.cs" />
     <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\ProductController.cs" />
@@ -229,7 +230,10 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\tedushop.common.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\authData.js" />
+    <Content Include="app\shared\services\authenticationService.js" />
     <Content Include="app\shared\services\commonService.js" />
+    <Content Include="app\shared\services\loginService.js" />
     <Content Include="app\shared\services\notificationService.js" />
     <Content Include="app\shared\views\baseView.html" />
     <Content Include="Assets\admin\css\adminlte.css" />
@@ -288,14 +292,14 @@
     <Content Include="Assets\admin\js\pages\dashboard3.js" />
     <Content Include="Assets\admin\libs\angular-ckeditor\angular-ckeditor.js" />
     <Content Include="Assets\admin\libs\angular-ckeditor\angular-ckeditor.min.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.js" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.min.css" />
+    <Content Include="Assets\admin\libs\angular-loading-bar\loading-bar.min.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\angular-local-storage.js" />
+    <Content Include="Assets\admin\libs\angular-local-storage\angular-local-storage.min.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.js" />
     <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\resolveService.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\resolveService.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\stateEvents.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\stateEvents.min.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ui-router-angularjs.js" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ui-router-angularjs.min.js" />
     <Content Include="Assets\admin\libs\angular.js\angular-csp.css" />
     <Content Include="Assets\admin\libs\angular.js\angular-csp.min.css" />
     <Content Include="Assets\admin\libs\angular.js\angular.js" />
@@ -6161,14 +6165,6 @@
     <Content Include="libman.json" />
     <Content Include="app\components\products\products.module.js" />
     <Content Include="Assets\admin\libs\angular.js\angular.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\angular-ui-router.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\resolveService.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\resolveService.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\stateEvents.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\stateEvents.min.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ui-router-angularjs.js.map" />
-    <Content Include="Assets\admin\libs\angular-ui-router\ui-router-angularjs.min.js.map" />
     <Content Include="Assets\admin\css\adminlte.css.map" />
     <Content Include="Assets\admin\css\adminlte.min.css.map" />
     <Content Include="Assets\admin\css\alt\adminlte.components.css.map" />

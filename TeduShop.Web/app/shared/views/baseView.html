@@ -1,5 +1,4 @@
-﻿    <!-- Site wrapper -->
-<a class="wrapper">
+﻿<div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -141,7 +140,7 @@
                 <a href="javascript:void(0);" class="dropdown-toggle nav-link media" data-toggle="dropdown">
                     <img src="/Assets/admin/img/user2-160x160.jpg" class="user-image align-self-center mr-3" alt="User Image">
                     <div class="media-body">
-                        <span class="d-none d-sm-block">Alexander Pierce</span>
+                        <span class="d-none d-sm-block">{{authentication.userName}}</span>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
@@ -149,7 +148,7 @@
                     <li class="user-header bg-info">
                         <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                         <p>
-                            Alexander Pierce - Web Developer
+                            {{authentication.userName}}
                             <small>Member since Nov. 2012</small>
                         </p>
                     </li>
@@ -195,7 +194,7 @@
                     <img src="/Assets/admin/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="javascript:void(0)" class="d-block">Alexander Pierce</a>
+                    <a href="javascript:void(0)" class="d-block">{{authentication.userName}}</a>
                 </div>
             </div>
 
@@ -295,7 +294,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="javascript:void(0);" class="nav-link">
                             <i class="nav-icon fas fa-chart-pie"></i>
                             <p>
                                 Sản phẩm
@@ -840,5 +839,6 @@
         <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
+</div>
+<!-- AdminLTE App -->
+<script src="/Assets/admin/js/adminlte.min.js"></script>

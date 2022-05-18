@@ -7,10 +7,6 @@
       "destination": "Assets/admin/libs/angular.js/"
     },
     {
-      "library": "angular-ui-router@1.0.30",
-      "destination": "Assets/admin/libs/angular-ui-router"
-    },
-    {
       "library": "jquery@3.6.0",
       "destination": "Assets/admin/libs/jquery"
     },
@@ -46,6 +42,18 @@
     {
       "library": "icheck-bootstrap@3.0.1",
       "destination": "Assets/admin/libs/icheck-bootstrap/"
+    },
+    {
+      "library": "angular-local-storage@0.7.1",
+      "destination": "Assets/admin/libs/angular-local-storage/"
+    },
+    {
+      "library": "angular-loading-bar@0.9.0",
+      "destination": "Assets/admin/libs/angular-loading-bar/"
+    },
+    {
+      "library": "angular-ui-router@0.3.2",
+      "destination": "Assets/admin/libs/angular-ui-router/"
     }
   ]
 }
