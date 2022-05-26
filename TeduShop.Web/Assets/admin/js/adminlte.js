@@ -3031,6 +3031,7 @@
 
 
     $__default["default"](window).on(EVENT_LOAD_DATA_API, function () {
+        return;
         $__default["default"](SELECTOR_DATA_WIDGET).each(function () {
             Treeview._jQueryInterface.call($__default["default"](this), 'init');
         });

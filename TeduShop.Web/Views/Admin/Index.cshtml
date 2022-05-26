@@ -61,5 +61,25 @@
     <script src="~/app/components/product_categories/productCategoryEditController.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
     <script src="~/app/components/login/loginController.js"></script>
+    <script>
+        $(document).ready(function () {
+            MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+            var targetNode = document.querySelector('body.sidebar-mini');
+
+            var observer = new MutationObserver(function (mutations, observer) {
+                var node = document.querySelector('body.sidebar-mini>div>div.wrapper');
+                if (node != null) {
+                    $('[data-widget="treeview"]').each(function () { adminlte.Treeview._jQueryInterface.call($(this), 'init') });
+                    observer.disconnect();
+                }
+            });
+
+            observer.observe(targetNode, {
+                subtree: true,
+                attributes: true
+            });
+        });
+    </script>
 </body>
 </html>
