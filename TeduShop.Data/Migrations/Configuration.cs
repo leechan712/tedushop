@@ -7,6 +7,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using TeduShop.Common;
     using TeduShop.Model.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TeduShop.Data.TeduShopDbContext>
@@ -25,6 +26,8 @@
 
             CreateUser(context);
             CreateProductCategorySample(context);
+            CreateFooter(context);
+            CreateSlide(context);
         }
 
         private void CreateUser(TeduShopDbContext context)
@@ -74,6 +77,55 @@
                 context.SaveChanges();
             }
 
+        }
+
+        private  void CreateFooter(TeduShopDbContext context)
+        {
+            if (context.Footers.Count(x => x.ID == CommonConstants.DefaultFooterId) == 0)
+            {
+                string content = "Footer";
+                context.Footers.Add(new Footer()
+                {
+                    ID = CommonConstants.DefaultFooterId,
+                    Content = content
+                });
+                context.SaveChanges();
+            }
+        }
+
+        private void CreateSlide(TeduShopDbContext context)
+        {
+            if (context.Slides.Count() == 0)
+            {
+                List<Slide> listSlide = new List<Slide>()
+                {
+                    new Slide() {
+                        Name ="Slide 1",
+                        DisplayOrder =1,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag.jpg",
+                        Content =@"	<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur 
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+                        <span class=""on-get"">GET NOW</span>" },
+                    new Slide() {
+                        Name ="Slide 2",
+                        DisplayOrder =2,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag1.jpg",
+                    Content=@"<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+
+                                <span class=""on-get"">GET NOW</span>"},
+                };
+                context.Slides.AddRange(listSlide);
+                context.SaveChanges();
+            }
         }
     }
 }
