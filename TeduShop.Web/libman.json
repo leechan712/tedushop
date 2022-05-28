@@ -54,6 +54,10 @@
     {
       "library": "angular-ui-router@0.3.2",
       "destination": "Assets/admin/libs/angular-ui-router/"
+    },
+    {
+      "library": "jqueryui@1.12.1",
+      "destination": "Assets/admin/libs/jqueryui/"
     }
   ]
 }
