@@ -12,6 +12,8 @@ namespace TeduShop.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            // BotDetect requests must not be routed
+            routes.IgnoreRoute("{*botdetect}", new { botdetect = @"(.*)BotDetectCaptcha\.ashx" });
 
             routes.MapRoute(
                 name: "Search",
@@ -59,6 +61,13 @@ namespace TeduShop.Web
                 name: "Page",
                 url: "trang/{alias}.html",
                 defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
+                namespaces: new string[] { "TeduShop.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+                name: "Contact",
+                url: "lien-he.html",
+                defaults: new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "TeduShop.Web.Controllers" }
             );
 
