@@ -52,7 +52,7 @@ namespace TeduShop.Web.Controllers
                 MailHelper.SendMail(adminEmail, "Thông tin liên hệ từ website", content);
 
                 HttpContext.Session[SmartAssembly.StringsEncoding.Strings.Get(176) + "contactCaptcha"] = false;
-                return RedirectToAction("Index", feedbackViewModel);
+                return RedirectToRoute("Contact");
             } else
             {
                 feedbackViewModel.ContactDetail = GetDetail();
