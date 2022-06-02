@@ -58,6 +58,19 @@
     {
       "library": "jqueryui@1.12.1",
       "destination": "Assets/admin/libs/jqueryui/"
+    },
+    {
+      "library": "mustache.js@2.2.1",
+      "destination": "Assets/admin/libs/mustache/"
+    },
+    {
+      "library": "numeral.js@1.5.3",
+      "destination": "Assets/admin/libs/numeral/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jquery-validation@1.15.0",
+      "destination": "Assets/admin/libs/jquery-validation/"
     }
   ]
 }

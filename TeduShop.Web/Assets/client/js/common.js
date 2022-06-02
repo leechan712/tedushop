@@ -4,6 +4,7 @@
     },
     registerEvents: function () {
         $("#txtKeyword").autocomplete({
+            minLength: 0,
             source: function (request, response) {
                 $.ajax({
                     url: "/Product/GetListProductByName",
@@ -28,7 +29,32 @@
             return $("<li>")
                 .append("<a>" + item.label + "</a>")
                 .appendTo(ul);
-        };;
+            };
+
+        $('.btnAddToCart').off('click').on('click', function (e) {
+            e.preventDefault();
+            var productId = parseInt($(this).data('id'));
+            $.ajax({
+                url: 'ShoppingCart/Add',
+                data: {
+                    productId: productId
+                },
+                type: 'POST',
+                dataType: 'json',
+                success: function (res) {
+                    if (res.status) {
+                        alert('Thêm sản phẩm thành công.');
+                    } else {
+                        alert(res.message);
+                    }
+                }
+            })
+        });
+
+        $('#btnLogout').off('click').on('click', function (e) {
+            e.preventDefault();
+            $('#frmLogout').submit();
+        });
     }
 }
 common.init();

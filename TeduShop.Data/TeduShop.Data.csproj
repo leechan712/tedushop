@@ -111,6 +111,10 @@
     <Compile Include="Migrations\202205300341511_Feedback2.designer.cs">
       <DependentUpon>202205300341511_Feedback2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206011653310_AddCustomnerId.cs" />
+    <Compile Include="Migrations\202206011653310_AddCustomnerId.designer.cs">
+      <DependentUpon>202206011653310_AddCustomnerId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
@@ -188,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205300341511_Feedback2.resx">
       <DependentUpon>202205300341511_Feedback2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206011653310_AddCustomnerId.resx">
+      <DependentUpon>202206011653310_AddCustomnerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

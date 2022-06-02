@@ -129,6 +129,9 @@
     <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
@@ -202,6 +205,7 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,6 +217,9 @@
     <Compile Include="Models\FeedbackViewModel.cs" />
     <Compile Include="Models\FooterViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\OrderDetailViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\PageViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
@@ -221,6 +228,7 @@
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Models\SlideViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -6128,6 +6136,66 @@
     <Content Include="Assets\admin\libs\font-awesome\sprites\solid.svg" />
     <Content Include="Assets\admin\libs\icheck-bootstrap\icheck-bootstrap.css" />
     <Content Include="Assets\admin\libs\icheck-bootstrap\icheck-bootstrap.min.css" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ar.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_bg.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_bn_BD.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ca.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_cs.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_da.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_de.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_el.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_es.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_es_AR.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_es_PE.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_et.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_eu.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_fa.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_fi.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_fr.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ge.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_gl.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_he.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_hr.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_hu.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_hy_AM.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_id.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_is.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_it.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ja.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ka.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_kk.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ko.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_lt.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_lv.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_mk.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_my.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_nl.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_no.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_pl.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_pt_BR.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_pt_PT.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ro.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_ru.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_si.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_sk.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_sl.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_sr.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_sr_lat.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_sv.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_th.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_tj.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_tr.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_uk.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_vi.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_zh.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\messages_zh_TW.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\methods_de.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\methods_es_CL.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\methods_fi.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\methods_nl.js" />
+    <Content Include="Assets\admin\libs\jquery-validation\dist\localization\methods_pt.js" />
     <Content Include="Assets\admin\libs\jqueryui\images\ui-icons_444444_256x240.png" />
     <Content Include="Assets\admin\libs\jqueryui\images\ui-icons_555555_256x240.png" />
     <Content Include="Assets\admin\libs\jqueryui\images\ui-icons_777620_256x240.png" />
@@ -6551,6 +6619,8 @@
     <Content Include="Assets\admin\libs\jquery\jquery.min.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.slim.js" />
     <Content Include="Assets\admin\libs\jquery\jquery.slim.min.js" />
+    <Content Include="Assets\admin\libs\mustache\mustache.js" />
+    <Content Include="Assets\admin\libs\mustache\mustache.min.js" />
     <Content Include="Assets\admin\libs\ngbootbox\dist\ngBootbox.js" />
     <Content Include="Assets\admin\libs\ngbootbox\dist\ngBootbox.min.js" />
     <Content Include="Assets\admin\libs\ngbootbox\examples\example-1\app.js" />
@@ -6563,6 +6633,35 @@
     <Content Include="Assets\admin\libs\ngbootbox\examples\index.html" />
     <Content Include="Assets\admin\libs\ngbootbox\gulpfile.js" />
     <Content Include="Assets\admin\libs\ngbootbox\ngBootbox.js" />
+    <Content Include="Assets\admin\libs\numeral\languages.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\be-nl.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\chs.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\cs.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\da-dk.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\de-ch.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\de.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\en-gb.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\es-ES.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\es.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\et.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\fi.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\fr-CA.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\fr-ch.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\fr.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\hu.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\it.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\ja.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\nl-nl.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\pl.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\pt-br.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\pt-pt.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\ru-UA.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\ru.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\sk.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\th.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\tr.min.js" />
+    <Content Include="Assets\admin\libs\numeral\languages\uk-UA.min.js" />
+    <Content Include="Assets\admin\libs\numeral\numeral.min.js" />
     <Content Include="Assets\admin\libs\toastr\toastr.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.css" />
     <Content Include="Assets\admin\libs\toastr\toastr.min.js" />
@@ -6626,6 +6725,7 @@
     <Content Include="Assets\client\images\zoom.png" />
     <Content Include="Assets\client\js\common.js" />
     <Content Include="Assets\client\js\controllers\contact.js" />
+    <Content Include="Assets\client\js\controllers\shoppingCart.js" />
     <Content Include="Assets\client\js\jquery.etalage.min.js" />
     <Content Include="Assets\client\js\jquery.flexisel.js" />
     <Content Include="Assets\client\js\jquery.min.js" />
@@ -6814,6 +6914,10 @@
     <Content Include="ConnectionStrings.config" />
     <Content Include="AppSettings.config" />
     <Content Include="Assets\client\images\Thumbs.db" />
+    <Content Include="Assets\admin\libs\jquery-validation\changelog.md" />
+    <Content Include="Assets\admin\libs\jquery-validation\LICENSE.md" />
+    <Content Include="Assets\admin\libs\jquery-validation\package.json" />
+    <Content Include="Assets\admin\libs\jquery-validation\README.md" />
     <None Include="packages.config" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\Layouts.cshtml" />
@@ -6828,6 +6932,8 @@
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
