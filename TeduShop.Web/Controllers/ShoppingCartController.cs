@@ -189,6 +189,7 @@ namespace TeduShop.Web.Controllers
             }
 
             _orderService.Create(orderNew, orderDetails);
+            _orderService.Save();
 
             return Json(new
             {
