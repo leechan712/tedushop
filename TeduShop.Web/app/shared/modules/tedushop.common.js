@@ -3,6 +3,7 @@
         ['ui.router',
             'ngBootbox',
             'ckeditor',
-            'LocalStorageModule'
+            'LocalStorageModule',
+            'checklist-model'
         ])
 })();
