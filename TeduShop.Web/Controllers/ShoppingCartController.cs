@@ -178,7 +178,7 @@ namespace TeduShop.Web.Controllers
 
             var cart = (List<ShoppingCartViewModel>)Session[CommonConstants.SessionCart];
             List<OrderDetail> orderDetails = new List<OrderDetail>();
-
+            bool isEnough = true;
             foreach (var item in cart)
             {
                 var detail = new OrderDetail();
@@ -186,15 +186,28 @@ namespace TeduShop.Web.Controllers
                 detail.Quantity = item.Quantity;
                 detail.Price = item.Product.Price;
                 orderDetails.Add(detail);
+
+                isEnough = _productService.SellProduct(item.ProductId, item.Quantity);
+                if (!isEnough) break;
             }
-
-            _orderService.Create(orderNew, orderDetails);
-            _orderService.Save();
-
-            return Json(new
+            if (isEnough)
             {
-                status = true
-            });
+                _orderService.Create(orderNew, orderDetails);
+                _orderService.Save();
+
+                return Json(new
+                {
+                    status = true
+                });
+            }
+            else
+            {
+                return Json(new
+                {
+                    status = false,
+                    message = "Không đủ hàng."
+                });
+            }
         }
     }
 }

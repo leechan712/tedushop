@@ -4,6 +4,7 @@
             'ngBootbox',
             'ckeditor',
             'LocalStorageModule',
-            'checklist-model'
+            'checklist-model',
+            'chart.js'
         ])
 })();
