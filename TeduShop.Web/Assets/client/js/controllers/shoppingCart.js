@@ -81,6 +81,20 @@
                 cart.createOrder();
             }
         });
+
+        $('input[name="paymentMethod"]').off('click').on('click', function () {
+            if ($(this).val() == 'NL') {
+                $('.boxContent').hide();
+                $('#nganluongContent').show();
+            }
+            else if ($(this).val() == 'ATM_ONLINE') {
+                $('.boxContent').hide();
+                $('#bankContent').show();
+            }
+            else {
+                $('.boxContent').hide();
+            }
+        });
     },
     deleteItem: function (productId) {
         $.ajax({
@@ -163,7 +177,8 @@
             CustomerEmail: $('#txtEmail').val(),
             CustomerMobile: $('#txtPhone').val(),
             CustomerMessage: $('#txtMessage').val(),
-            PaymentMethod: "Thanh toán tiền mặt",
+            PaymentMethod: $('input[name="paymentMethod"]:checked').val(),
+            BankCode: $('input[groupname="bankcode"]:checked').prop('id'),
             Status: false
         }
         $.ajax({
@@ -175,11 +190,16 @@
             },
             success: function (response) {
                 if (response.status) {
-                    $('#divCheckout').hide();
-                    cart.deleteAll();
-                    setTimeout(function () {
-                        $('#cartContent').html('Cảm ơn bạn đã đặt hàng thành công. Chúng tôi sẽ liên hệ sớm nhất.');
-                    }, 2000);
+                    if (response.urlCheckout != undefined && response.urlCheckout != '') {
+
+                        window.location.href = response.urlCheckout;
+                    } else {
+                        $('#divCheckout').hide();
+                        cart.deleteAll();
+                        setTimeout(function () {
+                            $('#cartContent').html('Cảm ơn bạn đã đặt hàng thành công. Chúng tôi sẽ liên hệ sớm nhất.');
+                        }, 2000);
+                    }
                 }
                 else {
                     $('#divMessage').show();
