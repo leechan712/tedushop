@@ -35,5 +35,21 @@ namespace TeduShop.Common
             }
             return str2;
         }
+
+        /// <summary>
+        /// Replace HTML template with values
+        /// </summary>
+        /// <param name="template">Template content HTML</param>
+        /// <param name="replacements">Dictionary with key/value</param>
+        /// <returns></returns>
+        public static string Parse(this string template, Dictionary<string, string> replacements)
+        {
+            if (replacements.Count > 0)
+            {
+                template = replacements.Keys
+                            .Aggregate(template, (current, key) => current.Replace(key, replacements[key]));
+            }
+            return template;
+        }
     }
 }

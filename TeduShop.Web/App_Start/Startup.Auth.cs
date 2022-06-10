@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -7,10 +8,14 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
+using TeduShop.Common;
 using TeduShop.Data;
 using TeduShop.Model.Models;
+using TeduShop.Service;
+using TeduShop.Web.Infrastructure.Core;
 
 [assembly: OwinStartup(typeof(TeduShop.Web.App_Start.Startup))]
 
@@ -62,15 +67,15 @@ namespace TeduShop.Web.App_Start
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1724156397871880",
+               appSecret: "398039cc7588d52f87a7adcefecc3210");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "712161982861-4d9bdgfvf6pti1vviifjogopqdqlft56.apps.googleusercontent.com",
+                ClientSecret = "T0cgiSG6Gi7BKMr-fCCkdErO"
+            });
         }
 
         public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
@@ -102,10 +107,20 @@ namespace TeduShop.Web.App_Start
                 }
                 if (user != null)
                 {
+                    var applicationGroupService = ServiceFactory.Get<IApplicationGroupService>();
+                    var listGroup = applicationGroupService.GetListGroupByUserId(user.Id);
+                    if (listGroup.Any(x => x.Name == CommonConstants.Administrator))
+                    {
                         ClaimsIdentity identity = await userManager.CreateIdentityAsync(
                                        user,
                                        DefaultAuthenticationTypes.ExternalBearer);
                         context.Validated(identity);
+                    }
+                    else
+                    {
+                        context.Rejected();
+                        context.SetError("invalid_group", "Bạn không phải là admin");
+                    }
                 }
                 else
                 {

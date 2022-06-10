@@ -17,6 +17,8 @@
     <link href="~/Assets/admin/libs/angular-loading-bar/loading-bar.min.css" rel="stylesheet" />
     <!-- Chart -->
     <link href="~/Assets/admin/libs/angular-chart.js/angular-chart.min.css" rel="stylesheet" />
+    <!-- UI Select -->
+    <link href="~/Assets/admin/libs/angular-ui-select/select.min.css" rel="stylesheet" />
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Assets/admin/css/adminlte.min.css">
     <link href="~/Assets/admin/css/custom.css" rel="stylesheet" />
@@ -32,6 +34,7 @@
     <!-- Begin embed angularJS -->
     <script src="~/Assets/admin/libs/angular.js/angular.js"></script>
     <script src="~/Assets/admin/libs/angular-ui-router/angular-ui-router.js"></script>
+    <script src="~/Assets/admin/libs/angular-sanitize/angular-sanitize.js"></script>
     <script src="~/Assets/admin/libs/toastr/toastr.min.js"></script>
     <script src="~/Assets/admin/libs/bootbox/bootbox.min.js"></script>
     <script src="~/Assets/admin/libs/ckeditor/ckeditor.js"></script>
@@ -41,15 +44,16 @@
     <script src="~/Assets/admin/libs/angular-local-storage/angular-local-storage.min.js"></script>
     <script src="~/Assets/admin/libs/angular-loading-bar/loading-bar.min.js"></script>
     <script src="~/Assets/admin/libs/checklist-model/checklist-model.js"></script>
-    <script src="~/Assets/admin/libs/Chart.js/Chart.js"></script> <!-- Thêm vào đây -->
-    <script src="~/Assets/admin/libs/angular-chart.js/angular-chart.js"></script> <!-- Thêm vào đây -->
+    <script src="~/Assets/admin/libs/Chart.js/Chart.js"></script>
+    <script src="~/Assets/admin/libs/angular-chart.js/angular-chart.js"></script>
+    <script src="~/Assets/admin/libs/angular-ui-select/select.min.js"></script>
 
     <script src="~/app/shared/modules/tedushop.common.js"></script>
     <script src="~/app/shared/filters/statusFilter.js"></script>
     <script src="~/app/shared/services/apiService.js"></script>
     <script src="~/app/shared/services/commonService.js"></script>
     <script src="~/app/shared/directives/pagerDirective.js"></script>
-    <script src="~/app/shared/directives/asDateDirective.js"></script>
+    <script src="~/app/shared/directives/fileUpload.directive.js"></script> <!-- Thêm vào đây -->
     <script src="~/app/shared/services/notificationService.js"></script>
     <script src="~/app/shared/services/authData.js"></script>
     <script src="~/app/shared/services/authenticationService.js"></script>
@@ -65,6 +69,7 @@
     <script src="~/app/components/products/productListController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productEditController.js"></script>
+    <script src="~/app/components/products/productImportController.js"></script> <!-- Thêm vào đây -->
     <script src="~/app/components/product_categories/productCategoryListController.js"></script>
     <script src="~/app/components/product_categories/productCategoryAddController.js"></script>
     <script src="~/app/components/product_categories/productCategoryEditController.js"></script>
@@ -87,7 +92,7 @@
             var targetNode = document.querySelector('body.sidebar-mini');
 
             var observer = new MutationObserver(function (mutations, observer) {
-                var node = document.querySelector('body.sidebar-mini>div>div.wrapper');
+                var node = document.querySelector('.sidebar>nav');
                 if (node != null) {
                     $('[data-widget="treeview"]').each(function () { adminlte.Treeview._jQueryInterface.call($(this), 'init') });
                     observer.disconnect();

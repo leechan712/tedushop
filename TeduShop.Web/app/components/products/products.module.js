@@ -22,6 +22,12 @@
                 parent: 'base',
                 templateUrl: "/app/components/products/productEditView.html",
                 controller: "productEditController"
+            })
+            .state('product_import', {
+                url: "/product_import",
+                parent: 'base',
+                templateUrl: "/app/components/products/productImportView.html",
+                controller: "productImportController"
             });
     }
 })();

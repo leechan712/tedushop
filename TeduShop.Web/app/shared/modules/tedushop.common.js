@@ -5,6 +5,8 @@
             'ckeditor',
             'LocalStorageModule',
             'checklist-model',
-            'chart.js'
+            'chart.js',
+            'ngSanitize',
+            'ui.select'
         ])
 })();

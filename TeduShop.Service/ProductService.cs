@@ -44,6 +44,8 @@ namespace TeduShop.Service
 
         bool SellProduct(int productId, int quantity);
 
+        IEnumerable<Product> GetListProduct(string keyword);
+
         void Save();
     }
 
@@ -251,6 +253,16 @@ namespace TeduShop.Service
                 return false;
             product.Quantity -= quantity;
             return true;
+        }
+
+        public IEnumerable<Product> GetListProduct(string keyword)
+        {
+            IEnumerable<Product> query;
+            if (!string.IsNullOrEmpty(keyword))
+                query = _productRepository.GetMulti(x => x.Name.Contains(keyword));
+            else
+                query = _productRepository.GetAll();
+            return query;
         }
     }
 }
